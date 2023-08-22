@@ -1,31 +1,22 @@
-function add() {
-    var num1 = parseFloat(document.getElementById('num1').value);
-    var num2 = parseFloat(document.getElementById('num2').value);
-    var result = num1 + num2;
-    document.getElementById('result').textContent = "Result: " + result;
+let displayValue = '';
+
+function appendToDisplay(value) {
+    displayValue += value;
+    document.getElementById('display').value = displayValue;
 }
 
-function subtract() {
-    var num1 = parseFloat(document.getElementById('num1').value);
-    var num2 = parseFloat(document.getElementById('num2').value);
-    var result = num1 - num2;
-    document.getElementById('result').textContent = "Result: " + result;
+function clearDisplay() {
+    displayValue = '';
+    document.getElementById('display').value = '';
 }
 
-function multiply() {
-    var num1 = parseFloat(document.getElementById('num1').value);
-    var num2 = parseFloat(document.getElementById('num2').value);
-    var result = num1 * num2;
-    document.getElementById('result').textContent = "Result: " + result;
-}
-
-function divide() {
-    var num1 = parseFloat(document.getElementById('num1').value);
-    var num2 = parseFloat(document.getElementById('num2').value);
-    if (num2 !== 0) {
-        var result = num1 / num2;
-        document.getElementById('result').textContent = "Result: " + result;
-    } else {
-        document.getElementById('result').textContent = "Cannot divide by zero";
+function calculate() {
+    try {
+        const result = eval(displayValue);
+        document.getElementById('display').value = result;
+        displayValue = result.toString();
+    } catch (error) {
+        document.getElementById('display').value = 'Error';
+        displayValue = '';
     }
 }
