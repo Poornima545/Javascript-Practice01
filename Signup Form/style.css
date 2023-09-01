@@ -1,0 +1,17 @@
+body {
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  text-align: justify;
+}
+
+label {
+  font-size: 2rem;
+  margin-left: 3rem;
+}
+
+.Sign-Up {
+  font-size: 2rem;
+  margin: 1rem 0 2rem 3rem;
+}
